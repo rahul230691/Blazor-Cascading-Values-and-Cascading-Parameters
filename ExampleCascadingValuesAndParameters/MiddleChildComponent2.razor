@@ -1,0 +1,11 @@
+﻿
+<!-- Middle Child Component -->
+
+<p style="color:@TextColor">I'm a middle child component.</p>
+
+<GrandChildComponent></GrandChildComponent>
+
+@code {
+    [CascadingParameter]
+    public string TextColor { get; set; }
+}

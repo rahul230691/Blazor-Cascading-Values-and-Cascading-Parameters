@@ -1,0 +1,11 @@
+﻿@page "/pass-data-through-normal-parameters"
+
+<!-- Parent Component -->
+
+<p style="color:@TextColor">I'm a Parent Component.</p>
+
+<MiddleChildComponent TextColor="@TextColor"></MiddleChildComponent>
+
+@code {
+    protected string TextColor { get; set; } = "red";
+}

@@ -1,0 +1,12 @@
+﻿<h4>ChildComponent2</h4>
+
+<p style="color:@TColor">I'm Child 2 with @TColor color. Text color is changed @ColorChangedCounter time.</p>
+
+@code {
+
+    [CascadingParameter]
+    public string TColor { get; set; }
+
+    [CascadingParameter]
+    public int ColorChangedCounter { get; set; }
+}

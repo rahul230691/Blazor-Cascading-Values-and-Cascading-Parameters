@@ -1,0 +1,13 @@
+﻿@page "/pass-data-through-cascading-parameters"
+
+<!-- Parent Component -->
+
+<p style="color:@TextColor">I'm a Parent Component.</p>
+
+<CascadingValue Value="@TextColor">
+    <MiddleChildComponent2></MiddleChildComponent2>
+</CascadingValue>
+
+@code {
+    protected string TextColor { get; set; } = "red";
+}

@@ -1,0 +1,12 @@
+﻿<h4>Child Component</h4>
+
+<p style="color:@TColor; font-size: @FontSize">I'm Child with @TColor color with @FontSize font-size.</p>
+
+@code {
+
+    [CascadingParameter(Name = "ColorValue")]
+    public string TColor { get; set; }
+
+    [CascadingParameter(Name = "SizeValue")]
+    public string FontSize { get; set; }
+}

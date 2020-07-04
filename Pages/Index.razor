@@ -1,0 +1,28 @@
+﻿@page "/"
+
+<h2>Multiple Cascading Parameters</h2>
+
+<button @onclick="ChangeColor">Change Text Color For All Descendants</button>
+<br/><br />
+<p style="color: @TextColor">I'm parent with @TextColor color. Text Color is changed @ColorChangedCounter time.</p>
+
+<CascadingValue Value="@TextColor">
+    <CascadingValue Value="@ColorChangedCounter">
+        <ChildComponent1></ChildComponent1>
+        <ChildComponent2></ChildComponent2>
+    </CascadingValue>
+</CascadingValue>
+
+
+
+@code{
+    protected string TextColor { get; set; } = "Red";
+
+    protected int ColorChangedCounter { get; set; } = 1;
+
+    protected void ChangeColor()
+    {
+        TextColor = "Green";
+        ColorChangedCounter = ColorChangedCounter + 1;
+    }
+}

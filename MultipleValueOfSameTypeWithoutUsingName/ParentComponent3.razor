@@ -1,0 +1,26 @@
+﻿@page "/multiple-values-of-same-type-without-using-name"
+
+<h2>Multiple Cascading Parameters of same type</h2>
+
+<button @onclick="ChangeColor">Change Text Color For All Descendants</button>
+<br />
+<br />
+<p style="color: @TextColor; font-size: @FontSize">I'm parent with @TextColor color with @FontSize font-size.</p>
+
+<CascadingValue Value="@TextColor">
+    <CascadingValue Value="@FontSize">
+        <ChildComponent3></ChildComponent3>
+    </CascadingValue>
+</CascadingValue>
+
+@code{
+    protected string TextColor { get; set; } = "Red";
+
+    protected string FontSize { get; set; } = "1em";
+
+    protected void ChangeColor()
+    {
+        TextColor = "Green";
+        FontSize = "2em";
+    }
+}

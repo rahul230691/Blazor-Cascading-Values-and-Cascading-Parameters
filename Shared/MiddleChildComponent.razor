@@ -1,0 +1,11 @@
+﻿
+<!-- Middle Child Component -->
+
+<p style="color:@TextColor">I'm a middle child component.</p>
+
+<ChildComponent TextColor="@TextColor"></ChildComponent>
+
+@code {
+    [Parameter]
+    public string TextColor { get; set; }
+}
